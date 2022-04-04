@@ -73,13 +73,13 @@ def get_space_video_by_api(url):
         return text
     elif code == 16001:
         print('该频道尚不存在')
-        return {"data": [{"tag_name": "该频道尚不存在"}]}
+        return {'code': 16001, 'message': '稿件不可见', 'ttl': 1}
     elif code == 62002:
         print({'code': 62002, 'message': '稿件不可见', 'ttl': 1})
-        return 62002
+        return {'code': 62002, 'message': '稿件不可见', 'ttl': 1}
     elif code == -404:
         print({'code': -404, 'message': '啥都木有', 'ttl': 1})
-        return -404
+        return {'code': -404, 'message': '啥都木有', 'ttl': 1}
     else:
         print(text)
         for item in range(wait_time, 0, -1):

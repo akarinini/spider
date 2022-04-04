@@ -10,7 +10,7 @@ video_data_api = 'https://api.bilibili.com/x/web-interface/view?bvid={}'
 for video in all:
     bvid = video[0]
     tag = video[1]
-    # 有些tag
+    # 有些tag被['']包裹，页面解析历史遗留问题
     if tag.startswith('[') & tag.endswith(']'):
         tag = tag[2:-2]
     videoData = get_space_video_by_api(video_data_api.format(bvid))
